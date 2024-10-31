@@ -5,7 +5,7 @@ ACET (Advanced Code Execution Tool) is a simple, browser-based utility for runni
 ## DISCLAIMER
 The creator is not responsible for any damages. Use for ethical purposes only.
 
-## Main Features
+## Key Features
 
 - **Run Code Directly in the DOM**  
   ACET allows users to input HTML, CSS, or JavaScript and run it in the document context. If the input code starts with HTML tags, the tool inserts it directly into the DOM; otherwise, JavaScript is evaluated. A confirmation dialog ensures that users are aware of the potential effects of running code.
