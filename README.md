@@ -33,7 +33,7 @@ Example output: (at the bottom of webpage)
 Access your browser's developer tools by right-clicking on the page and selecting "Inspect" or by pressing Ctrl + Shift + I (or Cmd + Option + I on Mac).
 
 ### Step 2: Paste in the ACET Code
-To get started, visit our GitHub repository to find the ACETlive.js code. Copy the code snippet from there and paste it into your browser's console. To automatically 
+To get started, visit our GitHub repository to find the ACETauto.js code. Copy the code snippet from there and paste it into your browser's console. To automatically 
 
 ### Step 3: Execute Your Code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
