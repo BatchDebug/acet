@@ -23,7 +23,10 @@ The creator is not responsible for any damages. Use for ethical purposes only.
   To add realism, ACET includes a random delay (between 500ms and 2500ms) before executing code. This delay mimics real-world response times, helping test how timing affects JavaScript execution within a browser.
 ## Screenshots
 Interface:
-![grafik](https://github.com/user-attachments/assets/20e99162-dfe6-4d65-9e33-465bd35e5207)
+![grafik](https://github.com/user-attachments/assets/53714437-f204-4f5b-bde7-6d7e320b0691)
+
+Code Testing: (Zen Browser Screenshot)
+![grafik](https://github.com/user-attachments/assets/993b36d0-a990-4948-88d5-a84b743735df)
 
 Example output: (at the bottom of webpage)
 ![grafik](https://github.com/user-attachments/assets/0b5e6e9e-f77b-4604-90c7-946dfd3b701a)
@@ -41,3 +44,6 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 ## Changelog
 ### Version 1.1
 - Added X button
+### Version 1.2
+- Added Code Testing
+- Improved Fetching
