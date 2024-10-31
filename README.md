@@ -41,3 +41,7 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 ## Installation
 
 To use ACET, simply paste the following code snippet into your browser's console (With F12): [https://github.com/BatchDebug/acet/blob/main/ACET.js](https://raw.githubusercontent.com/BatchDebug/acet/refs/heads/main/ACET.js)
+
+## Changelog
+### Version 1.0
+- Initial release
