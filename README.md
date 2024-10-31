@@ -38,10 +38,6 @@ To get started, visit our GitHub repository to find the ACET code. Copy the code
 ### Step 3: Execute Your Code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
 
-## Installation
-
-To use ACET, simply paste the following code snippet into your browser's console (With F12): [https://github.com/BatchDebug/acet/blob/main/ACET.js](https://raw.githubusercontent.com/BatchDebug/acet/refs/heads/main/ACET.js)
-
 ## Changelog
 ### Version 1.0
 - Initial release
