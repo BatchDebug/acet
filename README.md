@@ -39,5 +39,5 @@ To get started, visit our GitHub repository to find the ACET code. Copy the code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
 
 ## Changelog
-### Version 1.0
-- Initial release
+### Version 1.1
+- Added X button
