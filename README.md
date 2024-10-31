@@ -24,4 +24,4 @@ The creator is not responsible for any damages. Use for ethical purposes only.
 
 ## Installation
 
-To use ACET, simply paste the following code snippet into your browser's console (With F12): https://github.com/BatchDebug/acet/blob/main/ACET.js
+To use ACET, simply paste the following code snippet into your browser's console (With F12): [https://github.com/BatchDebug/acet/blob/main/ACET.js](https://raw.githubusercontent.com/BatchDebug/acet/refs/heads/main/ACET.js)
