@@ -22,7 +22,13 @@ The creator is not responsible for any damages. Use for ethical purposes only.
 - **Random Delay**  
   To add realism, ACET includes a random delay (between 500ms and 2500ms) before executing code. This delay mimics real-world response times, helping test how timing affects JavaScript execution within a browser.
 ## Screenshots
+Interface:
 ![grafik](https://github.com/user-attachments/assets/8229c15a-e60b-47b3-8c0e-15f161f0be15)
+Confirmation:
+![grafik](https://github.com/user-attachments/assets/caa19a14-938c-455d-9d93-9b199eb8fc59)
+Output: (at the bottom of webpage)
+![grafik](https://github.com/user-attachments/assets/0b5e6e9e-f77b-4604-90c7-946dfd3b701a)
+
 
 ## Installation
 
