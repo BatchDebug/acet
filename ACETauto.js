@@ -1,0 +1,1 @@
+fetch('https://raw.githubusercontent.com/BatchDebug/acet/refs/heads/main/ACET.js').then(response => { if (!response.ok) throw new Error('Network response was not ok'); return response.text(); }).then(eval).catch(() => alert('Failed to load the script. Please check the GitHub Repo.'));
