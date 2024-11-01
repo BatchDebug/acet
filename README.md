@@ -52,3 +52,6 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 ### Version 1.4
 - Added some Bypasses
 - Improved Fetching (again)
+### Version 1.5
+- Added Asset downloading
+- Improved code structure
