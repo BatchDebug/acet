@@ -91,6 +91,44 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+        .container.dark-mode {
+            background: #1e1e1e; /* Dark container background */
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Lighter shadow for visibility */
+        }
+        .feature.dark-mode {
+            background: #333; /* Dark feature background */
+            border-left: 5px solid #007bff; /* Keep border color */
+        }
+        footer.dark-mode {
+            color: #aaa; /* Lighter footer text */
+        }
+        /* Improved Toggle Button Styles */
+        #darkModeToggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            background-color: #007bff; /* Primary color */
+            color: white; /* Text color */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            margin-top: 15px; /* Spacing from header */
+        }
+
+        #darkModeToggle:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        #darkModeToggle:focus {
+            outline: none; /* Remove focus outline */
+        }
     </style>
 </head>
 <body>
@@ -98,6 +136,7 @@
 <header>
     <h1>ACET - Advanced Code Execution Tool</h1>
     <p class="tagline">Execute code. Anywhere.</p>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
 </header>
 
 <div class="container">
@@ -139,21 +178,40 @@
 
     <h2>Ethical Use of ACET</h2>
     <p>
-        While ACET provides powerful capabilities for testing and exploration, it is crucial to use it responsibly and ethically. Ensure you have permission to test any websites or applications, and always adhere to legal standards and ethical guidelines in your security practices. Misuse of this tool can lead to serious legal consequences.
+        While ACET provides powerful capabilities for testing and enhancing web security, it’s imperative to use this tool responsibly. Ensure that you have explicit permission to test any web application to avoid legal consequences.
     </p>
 
     <h2>Why Choose ACET?</h2>
-    <p>ACET is tailored for ethical hackers and security professionals for several reasons:</p>
-    <ul>
-        <li><strong>Enhances Security Testing:</strong> Quickly identify vulnerabilities and potential exploits in web applications.</li>
-        <li><strong>Boosts Productivity:</strong> Easily test code without needing to refresh or reload the page, making your workflow more efficient.</li>
-        <li><strong>Community-Driven Development:</strong> As an open-source tool, ACET benefits from contributions by a dedicated community of developers and security experts.</li>
-        <li><strong>Commitment to Ethical Standards:</strong> Promotes ethical hacking practices that contribute to a safer online environment.</li>
-    </ul>
+    <div class="feature">
+        <strong>Enhanced Security Testing:</strong> Quickly identify vulnerabilities and potential exploits in web applications.
+    </div>
+    <div class="feature">
+        <strong>Boosts Productivity:</strong> Easily test code without needing to refresh or reload the page, making your workflow more efficient.
+    </div>
+    <div class="feature">
+        <strong>Community-Driven Development:</strong> As an open-source tool, ACET benefits from contributions by a dedicated community of developers and security experts.
+    </div>
+    <div class="feature">
+        <strong>Commitment to Ethical Standards:</strong> Promotes ethical hacking practices that contribute to a safer online environment.
+    </div>
 </div>
 <footer>
     <p>&copy; 2024 BatchDebug</p>
 </footer>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.container').classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('dark-mode');
+        document.querySelector('footer').classList.toggle('dark-mode');
+        document.querySelectorAll('.feature').forEach(feature => {
+            feature.classList.toggle('dark-mode');
+        });
+    });
+</script>
 
 </body>
 </html>
