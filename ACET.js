@@ -21,6 +21,7 @@ document.getElementById('runButton').addEventListener('click', () => {
             code.startsWith("<") ? document.body.insertAdjacentHTML('beforeend', code) : eval(code);
             alert("Code executed.");
         } catch (e) {
+            console.error("Execution error:", e);
             alert("Execution error: " + e.message);
         }
     }, Math.random() * 2000 + 500);
@@ -29,9 +30,10 @@ document.getElementById('runButton').addEventListener('click', () => {
 document.getElementById('testButton').addEventListener('click', () => {
     const code = document.getElementById('codeInput').value.trim();
     if (!code) return alert("Enter code to test.");
-    const testWindow = window.open('', 'TestWindow', 'width=800,height=600');
-    testWindow.document.write(`<html><head><title>Test Code</title></head><body>${code}</body></html>`);
-    testWindow.document.close();
+    const newWindow = window.open("", "_blank");
+    newWindow.document.open();
+    newWindow.document.write(`<html><head><title>Test Code</title></head><body>${code}</body></html>`);
+    newWindow.document.close();
 });
 
 document.getElementById('fetchButton').addEventListener('click', async () => {
@@ -40,16 +42,18 @@ document.getElementById('fetchButton').addEventListener('click', async () => {
     try {
         const response = await fetch(url, {
             method: 'GET',
-            mode: 'no-cors',
+            mode: 'cors',
+            credentials: 'omit',
             headers: {
                 'User-Agent': Math.random() > 0.5 ? "Mozilla/5.0" : "Chrome/89.0",
                 'X-Requested-With': Math.random() > 0.5 ? "FetchAPI" : "XMLHttpRequest"
             }
         });
-        if (!response.ok) throw new Error("Response error: " + response.statusText);
+        if (!response.ok) throw new Error(`Response error: ${response.status} ${response.statusText}`);
         const data = await response.text();
         alert("Fetched text data:\n" + data);
     } catch (e) {
+        console.error("Fetch error:", e);
         alert("Fetch error: " + e.message);
     }
 });
@@ -63,13 +67,31 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
 
     script.onload = async function() {
         const zip = new JSZip();
-        
-        const htmlContent = document.documentElement.outerHTML;
+
+        // Create index.html without the ACET div
+        const acediv = document.getElementById('ACET');
+        if (acediv) acediv.remove(); // Remove ACET element from DOM temporarily
+
+        const htmlContent = document.documentElement.outerHTML; // Capture the rest of the document
         zip.file("index.html", htmlContent);
+
+        // Function to verify if URL is valid
+        function isValidUrl(url) {
+            try {
+                new URL(url);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
 
         async function fetchAndAddFile(url, fileName) {
             try {
-                const response = await fetch(url);
+                if (!isValidUrl(url)) {
+                    console.warn(`Invalid URL skipped: ${url}`);
+                    return;
+                }
+                const response = await fetch(url, { mode: 'cors' });
                 if (response.ok) {
                     const blob = await response.blob();
                     zip.file(fileName, blob);
@@ -82,20 +104,20 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
         }
 
         const assets = [];
-        
-        const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
+
+        const images = Array.from(document.querySelectorAll('img')).map(img => img.src).filter(isValidUrl);
         assets.push(...images);
 
-        const stylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(link => link.href);
+        const stylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(link => link.href).filter(isValidUrl);
         assets.push(...stylesheets);
 
-        const scripts = Array.from(document.querySelectorAll('script[src]')).map(script => script.src);
+        const scripts = Array.from(document.querySelectorAll('script[src]')).map(script => script.src).filter(src => src !== script.src).filter(isValidUrl);
         assets.push(...scripts);
 
-        const videos = Array.from(document.querySelectorAll('video source')).map(video => video.src);
+        const videos = Array.from(document.querySelectorAll('video source')).map(video => video.src).filter(isValidUrl);
         assets.push(...videos);
 
-        const audio = Array.from(document.querySelectorAll('audio source')).map(audio => audio.src);
+        const audio = Array.from(document.querySelectorAll('audio source')).map(audio => audio.src).filter(isValidUrl);
         assets.push(...audio);
 
         for (const assetUrl of assets) {
@@ -113,7 +135,14 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
+            })
+            .catch(e => {
+                console.error("Download error:", e);
+                alert("Error creating zip file: " + e.message);
             });
+
+        // Restore the ACET div after processing
+        document.body.appendChild(acediv);
     };
 });
 
