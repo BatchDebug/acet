@@ -50,3 +50,4 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 - Removed useless message detail.
 ### Version 1.4
 - Added some Bypasses
+- Improved Fetching (again)
