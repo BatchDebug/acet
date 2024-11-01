@@ -31,7 +31,7 @@ Example output: (at the bottom of webpage)
 
 ## How to use
 ### Video Tutorial:
-![How to install ACET](https://github.com/user-attachments/assets/e6a9e4a1-8149-4753-bbe6-4ce93e29c0f2)
+[![How to install ACET](https://github.com/user-attachments/assets/e6a9e4a1-8149-4753-bbe6-4ce93e29c0f2)](https://github.com/BatchDebug/acet/raw/refs/heads/main/How%20to%20install%20ACET.mp4)
 
 ### Step 1: Open the Console
 Access your browser's developer tools by right-clicking on the page and selecting "Inspect" or by pressing Ctrl + Shift + I (or Cmd + Option + I on Mac).
