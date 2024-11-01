@@ -12,7 +12,6 @@ document.body.insertAdjacentHTML('afterbegin', `
     </div>
 </div>`);
 
-// Event listener for running code
 document.getElementById('runButton').addEventListener('click', () => {
     const code = document.getElementById('codeInput').value.trim();
     if (!code) return alert("Enter code to run.");
@@ -27,7 +26,6 @@ document.getElementById('runButton').addEventListener('click', () => {
     }, Math.random() * 2000 + 500);
 });
 
-// Event listener for testing code
 document.getElementById('testButton').addEventListener('click', () => {
     const code = document.getElementById('codeInput').value.trim();
     if (!code) return alert("Enter code to test.");
@@ -36,7 +34,6 @@ document.getElementById('testButton').addEventListener('click', () => {
     testWindow.document.close();
 });
 
-// Event listener for fetching data
 document.getElementById('fetchButton').addEventListener('click', async () => {
     const url = prompt("URL to fetch data:");
     if (!url) return;
@@ -57,11 +54,9 @@ document.getElementById('fetchButton').addEventListener('click', async () => {
     }
 });
 
-// Event listener for downloading assets
 document.getElementById('downloadButton').addEventListener('click', async () => {
     alert("This may take a while, depending on the size of the website and the number of assets.");
 
-    // Load JSZip
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
     document.body.appendChild(script);
@@ -69,11 +64,9 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
     script.onload = async function() {
         const zip = new JSZip();
         
-        // Add the main HTML content to the zip
         const htmlContent = document.documentElement.outerHTML;
         zip.file("index.html", htmlContent);
 
-        // Function to fetch and add files to the zip
         async function fetchAndAddFile(url, fileName) {
             try {
                 const response = await fetch(url);
@@ -88,36 +81,28 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
             }
         }
 
-        // Collect all assets to download
         const assets = [];
-
-        // Collect images
+        
         const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
         assets.push(...images);
 
-        // Collect stylesheets
         const stylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(link => link.href);
         assets.push(...stylesheets);
 
-        // Collect scripts
         const scripts = Array.from(document.querySelectorAll('script[src]')).map(script => script.src);
         assets.push(...scripts);
 
-        // Collect videos
         const videos = Array.from(document.querySelectorAll('video source')).map(video => video.src);
         assets.push(...videos);
 
-        // Collect audio
         const audio = Array.from(document.querySelectorAll('audio source')).map(audio => audio.src);
         assets.push(...audio);
 
-        // Download each asset
         for (const assetUrl of assets) {
             const fileName = assetUrl.split('/').pop();
             await fetchAndAddFile(assetUrl, `assets/${fileName}`);
         }
 
-        // Generate the zip file and download it
         zip.generateAsync({ type: "blob" })
             .then(function(content) {
                 const url = URL.createObjectURL(content);
@@ -132,7 +117,6 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
     };
 });
 
-// Event listener for closing the ACET interface
 document.getElementById('closeButton').addEventListener('click', () => {
     document.getElementById('ACET').remove();
 });
