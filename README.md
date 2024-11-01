@@ -55,3 +55,4 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 ### Version 1.5
 - Added Asset downloading
 - Improved code structure
+- Improved ACETauto.js
