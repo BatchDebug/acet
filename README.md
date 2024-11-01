@@ -46,5 +46,5 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 - Improved Fetching
 ### Version 1.3
 - Added ACETauto.js to make updating automated and fetch the code from the repo.
-#### Version 1.3 2
+#### Version 1.3 (2)
 - Removed useless message detail.
