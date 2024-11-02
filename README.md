@@ -42,21 +42,25 @@ To get started, visit our GitHub repository to find the ACETauto.js code. Copy t
 ### Step 3: Execute Your Code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
 
-## License info
-| Provision                       | Allowed                                    | Limited / Prohibited                                   |
-|---------------------------------|--------------------------------------------|-------------------------------------------------------|
-| **Trademark Use**               | Not explicitly covered                     | N/A                                                   |
-| **Open Source Requirement**     | Software must be open source               | Cannot use license for closed-source projects         |
-| **Use Rights**                  | Allowed for any lawful, open-source use    | Cannot use for military, destructive, or illegal uses |
-| **Modification Rights**         | Modifications allowed if documented        | Must clearly mark and attribute modifications         |
-| **Distribution Rights**         | Allowed with original license and attributions | Must retain license and acknowledge modifications    |
-| **Warranty Disclaimer**         | No warranty provided; "AS IS" condition    | All risks and liabilities fall on the user            |
-| **Liability Limitation**        | Not liable for damages or losses           | N/A                                                   |
-| **Attribution Requirement**     | Proper credit to original creator required | Must display attribution prominently                  |
-| **Termination of Rights**       | Rights terminate upon violation of terms   | Must stop using software if license is violated       |
-| **Security of Contributions**   | Best security practices for contributions  | Malicious contributions lead to right revocation      |
-| **Governing Law**               | License governed by creator's jurisdiction | Legal disputes handled in that jurisdiction           |
-| **Future Versions**             | Can use this or future OGL versions        | Future rights do not apply retroactively              |
+## General info
+| Provision                        | Allowed / Required                                   | Limited / Prohibited                                         |
+|----------------------------------|------------------------------------------------------|--------------------------------------------------------------|
+| **Open Source Requirement**      | Source code must be public and open source           | Cannot be used for closed-source projects                    |
+| **Use Rights**                   | Lawful, ethical, and responsible use encouraged      | Harmful, malicious, or illegal uses discouraged              |
+| **Modification Rights**          | Modifications allowed if documented and marked       | N/A                                                          |
+| **Distribution Rights**          | Distribution allowed with original license and attribution | Cannot remove license; must indicate modifications        |
+| **Responsible Use**              | Encourage ethical use, transparency, and accountability | Avoid harmful, privacy-invasive, or unethical applications  |
+| **Security Standards**           | Follow secure coding practices in contributions      | Contributions with vulnerabilities or malicious code         |
+| **Attribution Requirement**      | Must credit original creators visibly                | N/A                                                          |
+| **Acknowledgment of Modifications** | Modifications must be labeled with description of changes | N/A                                                     |
+| **Compliance with Third-Party Licenses** | Must follow terms of third-party libraries         | Cannot violate third-party licenses                          |
+| **Termination of Rights**        | Rights terminate upon license violation              | Must cease using and distributing Software if license violated |
+| **Security of Contributions**    | Secure coding practices required                     | Malicious or insecure contributions result in rights revocation |
+| **License Enforcement**          | License creators may enforce terms                   | N/A                                                          |
+| **Governing Law**                | Governed by creator’s jurisdiction                   | Legal disputes handled in that jurisdiction                  |
+| **Future Versions**              | May use this or future OGL versions                  | Future rights do not apply retroactively                     |
+| **User Responsibility**          | User responsible for lawful and ethical compliance   | Creators not liable for misuse                               |
+| **Compliance with Community Standards** | Encouraged to follow responsible open-source community standards | N/A                                        |
 ## Changelog
 ### Version 1.1
 - Added X button
