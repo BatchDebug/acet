@@ -42,7 +42,7 @@ To get started, visit our GitHub repository to find the ACETauto.js code. Copy t
 ### Step 3: Execute Your Code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
 
-## General info
+## License info
 | Provision                        | Allowed / Required                                   | Limited / Prohibited                                         |
 |----------------------------------|------------------------------------------------------|--------------------------------------------------------------|
 | **Open Source Requirement**      | Source code must be public and open source           | Cannot be used for closed-source projects                    |
