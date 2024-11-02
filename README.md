@@ -80,3 +80,5 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 - Improved ACETauto.js
 #### Version 1.5 (2)
 - More Bypasses
+#### License Update
+- Updated license to OGL 2.0
