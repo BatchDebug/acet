@@ -42,6 +42,21 @@ To get started, visit our GitHub repository to find the ACETauto.js code. Copy t
 ### Step 3: Execute Your Code
 After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.
 
+## License info
+| Provision                       | Allowed                                    | Limited / Prohibited                                   |
+|---------------------------------|--------------------------------------------|-------------------------------------------------------|
+| **Trademark Use**               | Not explicitly covered                     | N/A                                                   |
+| **Open Source Requirement**     | Software must be open source               | Cannot use license for closed-source projects         |
+| **Use Rights**                  | Allowed for any lawful, open-source use    | Cannot use for military, destructive, or illegal uses |
+| **Modification Rights**         | Modifications allowed if documented        | Must clearly mark and attribute modifications         |
+| **Distribution Rights**         | Allowed with original license and attributions | Must retain license and acknowledge modifications    |
+| **Warranty Disclaimer**         | No warranty provided; "AS IS" condition    | All risks and liabilities fall on the user            |
+| **Liability Limitation**        | Not liable for damages or losses           | N/A                                                   |
+| **Attribution Requirement**     | Proper credit to original creator required | Must display attribution prominently                  |
+| **Termination of Rights**       | Rights terminate upon violation of terms   | Must stop using software if license is violated       |
+| **Security of Contributions**   | Best security practices for contributions  | Malicious contributions lead to right revocation      |
+| **Governing Law**               | License governed by creator's jurisdiction | Legal disputes handled in that jurisdiction           |
+| **Future Versions**             | Can use this or future OGL versions        | Future rights do not apply retroactively              |
 ## Changelog
 ### Version 1.1
 - Added X button
