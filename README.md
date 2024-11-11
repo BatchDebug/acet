@@ -84,3 +84,5 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 - More Bypasses
 #### License Update
 - Updated license to OGL 2.0
+#### Version 1.5 (3)
+- Added even more Bypasses
