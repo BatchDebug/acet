@@ -18,7 +18,7 @@ document.getElementById('runButton').addEventListener('click', () => {
     if (!confirm("Run this code?")) return;
     setTimeout(() => {
         try {
-            code.startsWith("<") ? document.body.insertAdjacentHTML('beforeend', code) : eval(code);
+            code.startsWith("<") ? document.body.insertAdjacentHTML('beforeend', code) : (new Function(code))();
             alert("Code executed.");
         } catch (e) {
             console.error("Execution error:", e);
