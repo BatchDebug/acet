@@ -9,6 +9,7 @@ document.body.insertAdjacentHTML('afterbegin', `
         <button id="fetchButton" style="padding:5px 10px;margin-left:5px;background:#28a745;color:white;border:none;cursor:pointer;">Fetch</button>
         <button id="downloadButton" style="padding:5px 10px;margin-left:5px;background:#17a2b8;color:white;border:none;cursor:pointer;">Download Assets</button>
         <button id="closeButton" style="padding:5px 10px;margin-left:5px;background:red;color:white;border:none;cursor:pointer;">X</button>
+        <button id="deleteAllTracesButton" style="padding:5px 10px;margin-left:5px;background:#ff3333;color:white;border:none;cursor:pointer;">Delete All Traces</button>
     </div>
 </div>`);
 
@@ -18,7 +19,7 @@ document.getElementById('runButton').addEventListener('click', () => {
     if (!confirm("Run this code?")) return;
     setTimeout(() => {
         try {
-            code.startsWith("<") ? document.body.insertAdjacentHTML('beforeend', code) : eval(code);
+            code.startsWith("<") ? document.body.insertAdjacentHTML('beforeend', code) : (new Function(code))();
             alert("Code executed.");
         } catch (e) {
             console.error("Execution error:", e);
@@ -67,15 +68,12 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
 
     script.onload = async function() {
         const zip = new JSZip();
-
-        // Create index.html without the ACET div
         const acediv = document.getElementById('ACET');
-        if (acediv) acediv.remove(); // Remove ACET element from DOM temporarily
+        if (acediv) acediv.remove();
 
-        const htmlContent = document.documentElement.outerHTML; // Capture the rest of the document
+        const htmlContent = document.documentElement.outerHTML;
         zip.file("index.html", htmlContent);
 
-        // Function to verify if URL is valid
         function isValidUrl(url) {
             try {
                 new URL(url);
@@ -87,24 +85,16 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
 
         async function fetchAndAddFile(url, fileName) {
             try {
-                if (!isValidUrl(url)) {
-                    console.warn(`Invalid URL skipped: ${url}`);
-                    return;
-                }
+                if (!isValidUrl(url)) return;
                 const response = await fetch(url, { mode: 'cors' });
                 if (response.ok) {
                     const blob = await response.blob();
                     zip.file(fileName, blob);
-                } else {
-                    console.warn(`Failed to fetch ${url}: Status ${response.status}`);
                 }
-            } catch (error) {
-                console.error(`Could not fetch ${url}:`, error);
-            }
+            } catch (error) {}
         }
 
         const assets = [];
-
         const images = Array.from(document.querySelectorAll('img')).map(img => img.src).filter(isValidUrl);
         assets.push(...images);
 
@@ -141,11 +131,21 @@ document.getElementById('downloadButton').addEventListener('click', async () => 
                 alert("Error creating zip file: " + e.message);
             });
 
-        // Restore the ACET div after processing
         document.body.appendChild(acediv);
     };
 });
 
 document.getElementById('closeButton').addEventListener('click', () => {
     document.getElementById('ACET').remove();
+});
+
+document.getElementById('deleteAllTracesButton').addEventListener('click', () => {
+    document.getElementById('ACET').remove();
+    const insertedScripts = document.querySelectorAll('script[src*="jszip"]');
+    insertedScripts.forEach(script => script.remove());
+    const insertedStyles = document.querySelectorAll('link[rel="stylesheet"]');
+    insertedStyles.forEach(style => style.remove());
+    const insertedAssets = document.querySelectorAll('img[src], video source, audio source');
+    insertedAssets.forEach(asset => asset.remove());
+    alert("All ACET traces have been deleted.");
 });
