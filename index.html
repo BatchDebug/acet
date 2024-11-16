@@ -1,217 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACET - Advanced Code Execution Tool</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 40px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            margin: 0 0 20px;
-            font-size: 36px;
-        }
-        h2 {
-            margin: 30px 0 15px;
-            font-size: 28px;
-        }
-        h3 {
-            margin: 20px 0 10px;
-            font-size: 22px;
-        }
-        p {
-            font-size: 16px;
-            color: #666;
-        }
-        .feature {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-left: 5px solid #007bff;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #999;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .cta-button {
-            padding: 15px 25px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            font-size: 18px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-        .usage-example {
-            background: #f8f9fa;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            white-space: pre;
-        }
-        .tagline {
-            font-size: 24px;
-            color: black;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text */
-        }
-        .container.dark-mode {
-            background: #1e1e1e; /* Dark container background */
-            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Lighter shadow for visibility */
-        }
-        .feature.dark-mode {
-            background: #333; /* Dark feature background */
-            border-left: 5px solid #007bff; /* Keep border color */
-        }
-        footer.dark-mode {
-            color: #aaa; /* Lighter footer text */
-        }
-        /* Improved Toggle Button Styles */
-        #darkModeToggle {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px; /* Rounded corners */
-            background-color: #007bff; /* Primary color */
-            color: white; /* Text color */
-            font-size: 16px; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            margin-top: 15px; /* Spacing from header */
-        }
+<html><head><base href="." /><title>ACET - Advanced Code Execution Tool</title><style>/* Dark modern theme */
+:root {
+  --primary: #2a9fd6;
+  --secondary: #444;
+  --background: #222;
+  --text: #fff;
+  --error: #ff4444;
+  --success: #00c851;
+  --accent: #9f44ff;
+}
 
-        #darkModeToggle:hover {
-            background-color: #0056b3; /* Darker shade on hover */
-            transform: translateY(-2px); /* Lift effect on hover */
-        }
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-        #darkModeToggle:focus {
-            outline: none; /* Remove focus outline */
-        }
-    </style>
-</head>
-<body>
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  padding: 100px 20px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
 
-<header>
-    <h1>ACET - Advanced Code Execution Tool</h1>
-    <p class="tagline">Execute code. Anywhere.</p>
-    <button id="darkModeToggle">Toggle Dark Mode</button>
-</header>
+.hero h1 {
+  font-size: 4em;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-<div class="container">
-    <h2>What is ACET?</h2>
-    <p>
-        ACET (Advanced Code Execution Tool) is a versatile browser tool designed specifically for ethical hackers, developers, and security professionals. This tool allows you to execute custom snippets of HTML, CSS, and JavaScript directly in your browser's console, enabling you to test vulnerabilities and enhance web security.
-    </p>
+.hero p {
+  font-size: 1.5em;
+  max-width: 600px;
+  margin: 20px auto;
+  opacity: 0.9;
+}
 
-    <h2>Key Features</h2>
-    <div class="feature">
-        <strong>Real-time Code Execution:</strong> Instantly test your code snippets and see how they interact with web applications.
-    </div>
-    <div class="feature">
-        <strong>User-Friendly Interface:</strong> Designed for ease of use, ACET helps both novice and experienced ethical hackers to navigate seamlessly.
-    </div>
-    <div class="feature">
-        <strong>Fetch External Data:</strong> Effortlessly retrieve JSON data from any URL supporting CORS, aiding in data validation and API testing.
-    </div>
-    <div class="feature">
-        <strong>Code Snippet Library:</strong> Organize and save your frequently used code snippets for quick access during testing sessions.
-    </div>
-    <div class="feature">
-        <strong>Cross-Browser Compatibility:</strong> ACET ensures a consistent experience across major browsers, so you can focus on your testing without compatibility issues.
-    </div>
+.cta-button {
+  display: inline-block;
+  background: var(--text);
+  color: var(--background);
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    <h2>How to Use ACET</h2>
-    <p>Using ACET is simple. Here’s how you can leverage it for ethical hacking:</p>
-    <h3>Step 1: Open the Console</h3>
-    <p>Access your browser's developer tools by right-clicking on the page and selecting "Inspect" or by pressing <code>Ctrl + Shift + I</code> (or <code>Cmd + Option + I</code> on Mac).</p>
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-    <h3>Step 2: Paste in the ACET Code</h3>
-    <p>
-        To get started, visit our GitHub repository to find the ACETlive.js code. Copy the code snippet from there and paste it into your browser's console.
-    </p>
-    <p><a href="https://github.com/BatchDebug/acet/tree/main" class="cta-button" target="_blank">View ACET on GitHub</a></p>
+.features {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
 
-    <h3>Step 3: Execute Your Code</h3>
-    <p>After pasting the ACET code into the console, you can enter your HTML, CSS, or JavaScript code into the provided textarea and click the "Run" button. You can also fetch data from an external source by clicking the "Fetch" button.</p>
+.feature-card {
+  background: var(--secondary);
+  padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
 
-    <h2>Ethical Use of ACET</h2>
-    <p>
-        While ACET provides powerful capabilities for testing and enhancing web security, it’s imperative to use this tool responsibly. Ensure that you have explicit permission to test any web application to avoid legal consequences.
-    </p>
+.feature-card:hover {
+  transform: translateY(-5px);
+}
 
-    <h2>Why Choose ACET?</h2>
-    <div class="feature">
-        <strong>Enhanced Security Testing:</strong> Quickly identify vulnerabilities and potential exploits in web applications.
-    </div>
-    <div class="feature">
-        <strong>Boosts Productivity:</strong> Easily test code without needing to refresh or reload the page, making your workflow more efficient.
-    </div>
-    <div class="feature">
-        <strong>Community-Driven Development:</strong> As an open-source tool, ACET benefits from contributions by a dedicated community of developers and security experts.
-    </div>
-    <div class="feature">
-        <strong>Commitment to Ethical Standards:</strong> Promotes ethical hacking practices that contribute to a safer online environment.
-    </div>
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.code-preview {
+  background: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 800px;
+  position: relative;
+}
+
+pre {
+  margin: 0;
+  padding: 15px;
+  background: #333;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  color: #f8f8f2;
+}
+
+.version-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9em;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  background: var(--secondary);
+  margin-top: 60px;
+}
+
+.changelog {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.changelog h2 {
+  color: var(--primary);
+}
+
+.version-entry {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.disclaimer {
+  background: var(--error);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  text-align: center;
+}
+</style><script type="text/javascript" nonce="6ac9688de00e43de91befa1f789" src="//local.adguard.org?ts=1731764693173&amp;type=content-script&amp;dmn=party.websim.ai&amp;url=https%3A%2F%2Fparty.websim.ai%2Fapi%2Fv1%2Fprojects%2Furgw3zbu_bl5w_yqf2m0%2Frevisions%2F11%2Fhtml&amp;app=zen.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-dnt"></script>
+<script type="text/javascript" nonce="6ac9688de00e43de91befa1f789" src="//local.adguard.org?ts=1731764693173&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><script type="text/javascript" nonce="6ac9688de00e43de91befa1f789" src="//local.adguard.org?ts=1731764693173&amp;type=content-script&amp;dmn=party.websim.ai&amp;url=https%3A%2F%2Fparty.websim.ai%2Fapi%2Fv1%2Fprojects%2Furgw3zbu_bl5w_yqf2m0%2Frevisions%2F10%2Fhtml&amp;app=zen.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-dnt"></script>
+<script type="text/javascript" nonce="6ac9688de00e43de91befa1f789" src="//local.adguard.org?ts=1731764693173&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script></head><body>
+<div class="hero">
+  <h1>ACET</h1>
+  <p>Advanced Code Execution Tool for testing HTML, CSS, and JavaScript directly in your browser</p>
+  <a href="https://github.com/BatchDebug/acet/tree/main" class="cta-button">Get Started</a>
+  <span class="version-badge">v1.5.3</span>
 </div>
+
+<div class="disclaimer">
+  <strong>DISCLAIMER:</strong> The creator is not responsible for any damages. Use for ethical purposes only.
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <h3>🚀 Run Code Directly in the DOM</h3>
+    <p>Execute HTML, CSS, or JavaScript code instantly with built-in confirmation dialogs for safety.</p>
+  </div>
+  
+  <div class="feature-card">
+    <h3>🔄 Fetch Remote JSON Data</h3>
+    <p>Fetch and display JSON data with randomized headers for realistic testing scenarios.</p>
+  </div>
+  
+  <div class="feature-card">
+    <h3>⚡ Random Delay Simulation</h3>
+    <p>Realistic response times between 500ms and 2500ms to simulate real-world conditions.</p>
+  </div>
+</div>
+
+<div class="code-preview">
+  <h2>How to Use</h2>
+  <h3>Step 1: Open the Console</h3>
+  <pre><code>Access your browser's developer tools (Ctrl + Shift + I or Cmd + Option + I on Mac)</code></pre>
+  
+  <h3>Step 2: Paste in the ACET Code</h3>
+  <pre><code>Visit our GitHub repository to find the ACETauto.js code
+Paste it into your browser's console</code></pre>
+  
+  <h3>Step 3: Execute Your Code</h3>
+  <pre><code>Enter your HTML, CSS, or JavaScript code in the textarea
+Click "Run" to execute or "Fetch" for external data</code></pre>
+</div>
+
+<div class="changelog">
+  <h2>Latest Updates</h2>
+  <div class="version-entry">
+    <h3>Version 1.5.3</h3>
+    <ul>
+      <li>Added even more Bypasses</li>
+    </ul>
+  </div>
+  <div class="version-entry">
+    <h3>Version 1.5.2</h3>
+    <ul>
+      <li>Updated license to OGL 2.0</li>
+      <li>More Bypasses</li>
+    </ul>
+  </div>
+  <div class="version-entry">
+    <h3>Version 1.5</h3>
+    <ul>
+      <li>Added Asset downloading</li>
+      <li>Improved code structure</li>
+      <li>Improved ACETauto.js</li>
+    </ul>
+  </div>
+  <div class="version-entry">
+    <h3>Previous Versions</h3>
+    <ul>
+      <li>V1.4: Added Bypasses, Improved Fetching</li>
+      <li>V1.3: Added ACETauto.js, automated updates</li>
+      <li>V1.2: Added Code Testing, Improved Fetching</li>
+      <li>V1.1: Added X button</li>
+    </ul>
+  </div>
+</div>
+
 <footer>
-    <p>&copy; 2024 BatchDebug</p>
+  <p>Created with ❤️ by the ACET Team</p>
+  <p>Licensed under OGL 2.0 - Use Responsibly</p>
 </footer>
 
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        document.querySelector('.container').classList.toggle('dark-mode');
-        document.querySelector('header').classList.toggle('dark-mode');
-        document.querySelector('footer').classList.toggle('dark-mode');
-        document.querySelectorAll('.feature').forEach(feature => {
-            feature.classList.toggle('dark-mode');
-        });
-    });
-</script>
-
-</body>
-</html>
+</body></html>
