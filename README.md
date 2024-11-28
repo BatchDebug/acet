@@ -86,3 +86,7 @@ After pasting the ACET code into the console, you can enter your HTML, CSS, or J
 - Updated license to OGL 2.0
 #### Version 1.5 (3)
 - Added even more Bypasses
+
+## Mini Changelog
+### Version 1.0
+- Created smaller version of ACET
